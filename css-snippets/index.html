@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>CSS Snippets</title>
+</head>
+<body>
+    <header>
+        <h1>CSS Snippet Cheatsheet</h1>
+        <p>Here's my most commonly used CSS properties for easy reference!</p>
+    </header>
+    <main>
+        <section class="snippet-card">
+            <h2>CSS Variable (Definition)</h2>
+            <p>Use this to define a CSS variable</p>
+            <code>:root {<br>
+            --main-bg-color: brown;<br>
+            } 
+            </code>
+        </section>
+
+        <section class="snippet-card">
+            <h2>CSS Variable (Use)</h2>
+            <p>Use this to incorporate a defined CSS variable.</p>
+            <code>element {<br>
+                    background-color: var(--main-bg-color);<br>
+                    } 
+                    </code>
+        </section>
+
+    </main>    
+</body>
+</html>

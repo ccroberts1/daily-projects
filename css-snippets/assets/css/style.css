@@ -1,0 +1,64 @@
+/* CSS Variables */
+:root {
+  --primary-theme-color: #0b2027;
+  --secondary-theme-color: #40798c;
+  --card-hover-color: #70a9a1;
+  --card-text-color: #cfd7c7;
+}
+
+/* General Styles */
+body {
+  background-color: var(--primary-theme-color);
+  color: var(--card-text-color);
+  text-align: center;
+}
+
+/* Headings */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5%;
+}
+
+h1,
+h2 {
+  color: var(--secondary-theme-color);
+}
+
+h2 {
+  border: 3px solid white;
+  width: 80%;
+}
+
+header p {
+  margin: 2%;
+}
+
+/* Card Content */
+
+.snippet-card {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  border: 3px dashed white;
+}
+
+code {
+  background-color: var(--secondary-theme-color);
+  padding: 5%;
+}
+
+/* Media Queries */
+
+/* Desktop Size
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.snippet-card {
+    width: 33%;
+}
+*/
