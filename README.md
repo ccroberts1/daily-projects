@@ -10,4 +10,4 @@ This is a container repository for all of the daily projects that I will be crea
 - Recipes
 - RMSG Class Notes
 - Wine Tracking
-
+- CSS Snippets
