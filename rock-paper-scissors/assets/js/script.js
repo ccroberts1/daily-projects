@@ -12,17 +12,14 @@ function startGame() {
 //Sets userChoice logic
 
     var userChoice = prompt("Please choose Rock, Paper or Scissors");
-    console.log(userChoice);
 
 //Sets computerChoice logic
 
     var computerOptions = ["Rock", "Paper", "Scissors"]
 
     var randomNum = Math.floor(Math.random() * computerOptions.length);
-    console.log(randomNum);
 
     var computerChoice = computerOptions[randomNum];
-    console.log(computerChoice);
     alert("Computer chose " + computerChoice + "!");
 
 //If statement for determining winner
@@ -50,13 +47,21 @@ function startGame() {
 
 //Current stats are displayed to the user
     alert("Stats so Far\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties + "\nTotal Games Played: " + totalGames);
+
+//User confirms whether they want to play again. If truthy, runs function again. If falsy, returns.
+    var playConfirm = confirm("Do you want to play again?");
+
+    if (playConfirm) {
+        startGame();
+    } else {
+        return;
+    }
 };
 
 startGame();
 
 
-//User confirms whether they want to play again
-// var playAgain = confirm("Do you want to play again?")
+
 
 
 
