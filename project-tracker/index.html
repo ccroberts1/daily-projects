@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Project Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <!--Header/Hero area, welcomes users and displays current time and date with Moment + setInterval-->
+        <div class="col">
+          <div class="jumbotron text-center">
+            <h1 class="display-3">Project Tracker</h1>
+            <hr class="my-4" />
+            <h2 id="dateTime"></h2>
+          </div>
+        </div>
+    </div>
+
+      <!--Card component with instructions, button to open modal dialog-->
+    <div class="row">
+        <div class="col">
+            <div class="card mb-3">
+            <div class="card-header">Instructions</div>
+            <div class="card-body">
+                <p class="card-text">To add project information, click on the button below and provide all required input.</p>
+                <button type="button" class="btn" data-toggle="modal" data-target="#inputModal" >Add a project</button>
+            </div>
+        </div>
+
+<!-- Modal with form requesting name of project, type of project (using select), wage for project and due date for project (datepicker) -->
+        <div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inputModalLabel">New Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                            <label for="project-name" class="col-form-label">Project Name:</label>
+                            <input type="text" class="form-control" id="project-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-type" class="col-form-label">Project Type:</label>
+                                <select name="project-type" class="custom-select" id="project-type">
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                    <option value="option4">Option 4</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-wage" class="col-form-label">Hourly Wage:</label>
+                                <input type="number" class="form-control" id="project-wage">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-due-date" class="col-form-label">Project Due Date:</label>
+                                <input type="date" class="form-control" id="project-due-date" min="2021-11-14">
+                                <!--Insert datepicker from jQuery UI-->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn">Submit</button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+      <!-- Table that project's information is appended to with columns for: project name, project type, hourly wage, due date, days until due date, estimated total earned -->
+                    
+        <div class="col">    
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Project Type</th>
+                        <th scrope="col">Hourly Wage</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Days Until Due Date</th>
+                        <th scope="col">Estimated Total Earned</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
