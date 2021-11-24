@@ -4,6 +4,7 @@ var projectNameEl = $("#project-name");
 var projectTypeEl = $("#project-type");
 var projectWageEl = $("#project-wage");
 var projectDueEl = $("#project-due-date");
+var tableBodyEl = $("#table-body");
 var dateTime = $("#dateTime");
 
 $(dateTime).text(moment().format("LLLL"));
@@ -19,26 +20,22 @@ setInterval(function () {
 }, 30000);
 
 //EVENT LISTENERS
-projectFormEl.submit(function (event) {
-  var nameInput = projectNameEl.val();
+$(projectFormEl).submit(function (event) {
   event.preventDefault();
-  console.log(nameInput);
+  var newRow = $("<tr>");
+  var nameInput = projectNameEl.val();
+  var typeInput = projectTypeEl.val();
+  var wageInput = projectWageEl.val();
+  var dueInput = projectDueEl.val();
+  tableBodyEl.append(newRow);
+
+  function addRows(name, type, wage, due) {
+    newRow.append($("<td>").text(name));
+    newRow.append($("<td>").text(type));
+    newRow.append($("<td>").text(wage));
+    newRow.append($("<td>").text(due));
+    newRow.append($("<td>").text()); //days = days until due date from Memory.js
+    newRow.append($("<td>").text()); //total = (wage*8)*days
+  }
+  addRows(nameInput, typeInput, wageInput, dueInput);
 });
-
-//Psuedo Coding
-/*When user presses the submit button, the fields
-of the form are printed to the table.
- 
-
-1st f - capture input from the 4 fields on the form
-2nd f - prints input from 1st f to 2nd, 
-accepts 4 args, 1 for each input from 1st f 
- Dynamically create tr, save to variable
- Dynamically create tds
- For days to due date, use Moment to calc difference
- between current date and due date
- For est amount, hr rate * 8, then * days to due date
- Append created tds to tr
- Append tr to tbody
- Close modal at end
-*/
